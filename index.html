@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Drawing</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src ="script.js"></script>
+    
+    <canvas id="canvas1"></canvas>
+    <div id="controls">
+        <button id="randomize">Randomize Fractal</button>
+        <button id="reset">Reset Shape</button>
+        <div class="sliders">
+
+            <label for="sides">Sides: </label>
+            <input type="range" min="1" max="22" value="1" step="1" class="slider" id="sides" name="sides">
+
+            <label for="scale">Scale: </label>
+            <input type="range" min="0.2" max="0.6" value="0.2" step="0.1" class="slider" id="scale" name="scale">
+
+            <label for="level">Level: </label>
+            <input type="range" min="1" max="3" value="1" step="1" class="slider" id="level" name="level">
+
+            <label for="spread">Spread: </label>
+            <input type="range" min="-.3" max=".3" value="1" step="0.02" class="slider" id="spread" name="spread">
+
+            <label for="branches">Branches: </label>
+            <input type="range" min="1" max="3" value="1" step="1" class="slider" id="branches" name="branches">
+
+            <label for="color">Color Hue: </label>
+            <input type="range" min="0" max="360" value="0" step="1" class="slider" id="hue" name="hue">
+            <!-- <input type="range" min="1" max="100" value="50" class="slider" id="saturation" name="saturation">
+            <input type="range" min="1" max="100" value="50" class="slider" id="lightness" name="lightness"> -->
+
+        </div>
+        
+        
+    </div>
+</body>
+</html>
