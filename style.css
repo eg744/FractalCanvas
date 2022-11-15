@@ -3,6 +3,7 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	transition: all 0.3s;
 }
 
 #canvas1 {
@@ -20,15 +21,47 @@ button {
 	padding: 10px;
 	text-decoration: none;
 	margin: 1px;
+	border-radius: 5px;
+}
+#close,
+#open {
+	width: fit-content;
+	height: fit-content;
+	margin: 0.1rem;
+}
+.change#close {
+	display: none;
+}
+.change#open {
+	position: absolute;
+	display: block;
 }
 
-#controls {
+/* .change#close {
+	display: none;
+}
+.open {
+	display: none;
+}
+.close {
+	display: block;
+}
+.change#open {
+	position: absolute;
+	display: block;
+} */
+
+.controls {
 	position: absolute;
 	padding: 10px;
 	border: 2px solid white;
 	margin: 10px;
 	width: 10rem;
 	background: rgba(0, 0, 0, 60%);
+}
+.active {
+	transform: translateX(-10%);
+	/* display: none; */
 }
 
 .sliders {

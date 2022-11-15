@@ -8,6 +8,10 @@ window.addEventListener('load', () => {
 	canvas.height = window.innerHeight;
 
 	// ==Controls==
+	const closeMenuButton = document.getElementById('close');
+	const openMenuButton = document.getElementById('open');
+	const controls = document.getElementById('controls');
+
 	const randomizerButton = document.getElementById('randomize');
 	const resetButton = document.getElementById('reset');
 
@@ -23,10 +27,11 @@ window.addEventListener('load', () => {
 
 	//Labels
 	const label_sides = document.querySelector('[for=sides]');
-	// const label_scale = document.querySelector('[for=scale]');
+	const label_scale = document.querySelector('[for=scale]');
 	const label_level = document.querySelector('[for=level]');
-
 	const label_spread = document.querySelector('[for=spread]');
+	const label_branches = document.querySelector('[for=branches]');
+	const label_hue = document.querySelector('[for=color]');
 
 	// ==Global effects==
 	let size =
@@ -136,13 +141,17 @@ window.addEventListener('load', () => {
 		slider_spread.value = spread;
 		slider_scale.value = scale;
 		slider_level.value = maxLevel;
+		slider_branches.value = branches;
+		// slider_hue.value = color;
 
 		label_sides.innerText = 'Sides: ' + Number(sides);
-
-		// Slider returns string value, convert to number with 2 decimal places
-		label_spread.innerText = 'Spread: ' + Number(spread).toFixed(2);
+		label_scale.innerText = 'Scale: ' + Number(scale).toFixed(2);
 		label_level.innerText =
 			'Max Depth Level (higher values intensive): ' + Number(maxLevel);
+		label_spread.innerText = 'Spread: ' + Number(spread).toFixed(2);
+
+		label_branches.innerText =
+			'Parent Branches (higher values intensive): ' + Number(branches);
 	}
 
 	function resetFractal() {
@@ -157,6 +166,22 @@ window.addEventListener('load', () => {
 	}
 
 	// ==Listeners==
+	closeMenuButton.addEventListener('click', () => {
+		controls.classList.toggle('active');
+		closeMenuButton.classList.toggle('change');
+
+		// closeMenuButton.classList.add('change');
+		// openMenuButton.classList.remove('change');
+	});
+	openMenuButton.addEventListener('click', () => {
+		controls.classList.toggle('active');
+
+		openMenuButton.classList.toggle('change');
+
+		// openMenuButton.classList.add('change');
+		// closeMenuButton.classList.remove('change');
+	});
+
 	randomizerButton.addEventListener('click', () => {
 		randomizeFractal();
 		drawFractal();
@@ -193,6 +218,9 @@ window.addEventListener('load', () => {
 	});
 
 	slider_hue.addEventListener('change', (event) => {
+		// Update hue text (color contains9 entire HSL)
+		label_hue.innerText = 'Color Hue: ' + event.target.value;
+
 		color = `hsl(${event.target.value}, 100%, 50%)`;
 		drawFractal();
 	});
