@@ -1,45 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas Drawing</title>
+    <title>Canvas Fractal Shape Drawing</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <script src ="script.js"></script>
-    
+    <script src="script.js"></script>
+
     <canvas id="canvas1"></canvas>
     <div id="controls">
         <button id="randomize">Randomize Fractal</button>
         <button id="reset">Reset Shape</button>
-        <div class="sliders">
+        <ul class="sliders">
+            <li class="fractal-slider">
+                <label for="sides">Sides: </label>
+                <input type="range" min="1" max="22" value="1" step="1" class="slider" id="sides" name="sides">
+            </li>
 
-            <label for="sides">Sides: </label>
-            <input type="range" min="1" max="22" value="1" step="1" class="slider" id="sides" name="sides">
 
-            <label for="scale">Scale: </label>
-            <input type="range" min="0.2" max="0.6" value="0.2" step="0.1" class="slider" id="scale" name="scale">
 
-            <label for="level">Level: </label>
-            <input type="range" min="1" max="3" value="1" step="1" class="slider" id="level" name="level">
+            <li class="fractal-slider">
+                <label for="scale">Scale: </label>
+                <input type="range" min="0.2" max="0.6" value="0.2" step="0.1" class="slider" id="scale" name="scale">
+            </li>
 
-            <label for="spread">Spread: </label>
-            <input type="range" min="-.3" max=".3" value="1" step="0.02" class="slider" id="spread" name="spread">
+            <li class="fractal-slider">
+                <label for="level">Max Depth Level (higher values intensive): </label>
+                <input type="range" min="1" max="8" value="1" step="1" class="slider" id="level" name="level">
+            </li>
 
-            <label for="branches">Branches: </label>
-            <input type="range" min="1" max="3" value="1" step="1" class="slider" id="branches" name="branches">
+            <li class="fractal-slider">
 
-            <label for="color">Color Hue: </label>
-            <input type="range" min="0" max="360" value="0" step="1" class="slider" id="hue" name="hue">
+                <label for="spread">Spread: </label>
+                <input type="range" min="-.3" max=".3" value="1" step="0.02" class="slider" id="spread" name="spread">
+            </li>
+            <li class="fractal-slider">
+
+                <label for="branches">Parent Branches (higher values intensive): </label>
+                <input type="range" min="1" max="2" value="1" step="1" class="" id="branches" name="branches">
+            </li>
+            <li class="fractal-slider">
+
+                <label for="color">Color Hue: </label>
+                <input type="range" min="0" max="360" value="0" step="1" class="slider" id="hue" name="hue">
+            </li>
             <!-- <input type="range" min="1" max="100" value="50" class="slider" id="saturation" name="saturation">
             <input type="range" min="1" max="100" value="50" class="slider" id="lightness" name="lightness"> -->
 
-        </div>
-        
-        
+        </ul>
+
+
     </div>
 </body>
+
 </html>
