@@ -37,20 +37,6 @@ button {
 	display: block;
 }
 
-/* .change#close {
-	display: none;
-}
-.open {
-	display: none;
-}
-.close {
-	display: block;
-}
-.change#open {
-	position: absolute;
-	display: block;
-} */
-
 .controls {
 	position: absolute;
 	padding: 10px;
@@ -60,7 +46,7 @@ button {
 	background: rgba(0, 0, 0, 60%);
 }
 .active {
-	transform: translateX(-10%);
+	transform: translateX(-110%);
 	/* display: none; */
 }
 

@@ -2,6 +2,9 @@
 window.addEventListener('load', () => {
 	// select canvas, context
 	const canvas = document.getElementById('canvas1');
+	canvas.addEventListener('contextmenu', (e) => {
+		console.log(e);
+	});
 	const ctx = canvas.getContext('2d');
 
 	canvas.width = window.innerWidth;
@@ -22,6 +25,8 @@ window.addEventListener('load', () => {
 	let slider_spread = document.getElementById('spread');
 	let slider_branches = document.getElementById('branches');
 	let slider_hue = document.getElementById('hue');
+
+	const saveImgButton = document.getElementById('saveImage');
 
 	let sliders = document.querySelectorAll('.slider');
 
@@ -165,10 +170,34 @@ window.addEventListener('load', () => {
 		color = 'hsl(290, 100%, 50%)';
 	}
 
+	// function saveFractalAsImage() {
+	// 	window.open(canvas.toDataURL('image/png'));
+	// 	let image = canvas.toDataURL('png');
+
+	// 	let a = document.createElement('a');
+	// 	a.href = image;
+	// 	a.download = 'image.png';
+
+	// 	a.click();
+	// }
+
+	function saveFractalAsImage() {
+		const a = document.createElement('a');
+		a.download = 'download.png';
+		a.href = canvas.toDataURL();
+		a.click();
+		a.delete;
+	}
+
 	// ==Listeners==
+
+	saveImgButton.addEventListener('click', () => {
+		saveFractalAsImage();
+	});
 	closeMenuButton.addEventListener('click', () => {
 		controls.classList.toggle('active');
-		closeMenuButton.classList.toggle('change');
+		closeMenuButton.classList.add('change');
+		openMenuButton.classList.add('change');
 
 		// closeMenuButton.classList.add('change');
 		// openMenuButton.classList.remove('change');
@@ -176,10 +205,10 @@ window.addEventListener('load', () => {
 	openMenuButton.addEventListener('click', () => {
 		controls.classList.toggle('active');
 
-		openMenuButton.classList.toggle('change');
+		// openMenuButton.classList.toggle('change');
 
-		// openMenuButton.classList.add('change');
-		// closeMenuButton.classList.remove('change');
+		openMenuButton.classList.remove('change');
+		closeMenuButton.classList.remove('change');
 	});
 
 	randomizerButton.addEventListener('click', () => {
