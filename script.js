@@ -30,7 +30,7 @@ window.addEventListener('load', () => {
 
 	let sliders = document.querySelectorAll('.slider');
 
-	//Labels
+	//==Labels==
 	const label_sides = document.querySelector('[for=sides]');
 	const label_scale = document.querySelector('[for=scale]');
 	const label_level = document.querySelector('[for=level]');
@@ -41,7 +41,7 @@ window.addEventListener('load', () => {
 	// ==Global effects==
 	let size =
 		canvas.width < canvas.height ? canvas.width * 0.2 : canvas.height * 0.2;
-	let maxLevel = 8; // depth (careful!)
+	let maxLevel = 8; // depth (careful! max should probably be 7 or 8)
 	let branches = 1; // number of parent branches
 
 	let linewidth = 30;
@@ -96,7 +96,7 @@ window.addEventListener('load', () => {
 		}
 		// Circle for each level
 		ctx.beginPath();
-		// start 0, size of branch. radius 50. start angle 0. end angle 360deg(PI*2);
+		// Arc: start 0, size of branch. radius 50. start angle 0. end angle 360deg(PI*2);
 		ctx.arc(-size / 2, size / 3, size * 0.2, 0, Math.PI * 2);
 		ctx.fill();
 	}
@@ -170,30 +170,15 @@ window.addEventListener('load', () => {
 		color = 'hsl(290, 100%, 50%)';
 	}
 
-	// function saveFractalAsImage() {
-	// 	window.open(canvas.toDataURL('image/png'));
-	// 	let image = canvas.toDataURL('png');
-
-	// 	let a = document.createElement('a');
-	// 	a.href = image;
-	// 	a.download = 'image.png';
-
-	// 	a.click();
-	// }
-
 	function saveFractalAsImage() {
 		const a = document.createElement('a');
-		a.download = 'download.png';
+		a.download = 'fractal_shape_download.png';
 		a.href = canvas.toDataURL();
 		a.click();
 		a.delete;
 	}
 
 	// ==Listeners==
-
-	saveImgButton.addEventListener('click', () => {
-		saveFractalAsImage();
-	});
 	closeMenuButton.addEventListener('click', () => {
 		controls.classList.toggle('active');
 		closeMenuButton.classList.add('change');
@@ -254,7 +239,11 @@ window.addEventListener('load', () => {
 		drawFractal();
 	});
 
-	// Responsive canvas
+	saveImgButton.addEventListener('click', () => {
+		saveFractalAsImage();
+	});
+
+	// ==Responsive canvas==
 	window.addEventListener('resize', function () {
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;

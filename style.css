@@ -11,7 +11,7 @@
 
 	position: absolute;
 
-	/* To center canvas on page */
+	/* Center canvas on page */
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -22,6 +22,11 @@ button {
 	text-decoration: none;
 	margin: 1px;
 	border-radius: 5px;
+	user-select: none;
+}
+button:hover {
+	/* scale: 1.1; */
+	box-shadow: 5px 5px 5px rgb(19, 31, 139);
 }
 #close,
 #open {
@@ -59,4 +64,7 @@ button {
 }
 .fractal-slider {
 	padding: 0.1rem;
+}
+.saveImage {
+	cursor: pointer;
 }
