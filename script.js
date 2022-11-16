@@ -2,9 +2,7 @@
 window.addEventListener('load', () => {
 	// select canvas, context
 	const canvas = document.getElementById('canvas1');
-	canvas.addEventListener('contextmenu', (e) => {
-		console.log(e);
-	});
+
 	const ctx = canvas.getContext('2d');
 
 	canvas.width = window.innerWidth;
@@ -27,8 +25,6 @@ window.addEventListener('load', () => {
 	let slider_hue = document.getElementById('hue');
 
 	const saveImgButton = document.getElementById('saveImage');
-
-	let sliders = document.querySelectorAll('.slider');
 
 	//==Labels==
 	const label_sides = document.querySelector('[for=sides]');
