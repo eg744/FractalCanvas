@@ -41,6 +41,7 @@ window.addEventListener('load', () => {
 	// ==Global effects==
 	let size =
 		canvas.width < canvas.height ? canvas.width * 0.2 : canvas.height * 0.2;
+	// let size = canvas.width < canvas.height ? canvas.width : canvas.height;
 	let maxLevel = 8; // depth (careful! max should probably be 7 or 8)
 	let branches = 1; // number of parent branches
 
@@ -112,6 +113,7 @@ window.addEventListener('load', () => {
 
 		// Rotates around 0,0 (top left) by default. set new axis with translate
 		ctx.translate(canvas.width / 2, canvas.height / 2);
+		ctx.scale(0.9, 0.9);
 		// h,v scale based on axis
 
 		for (let i = 0; i < sides; i++) {
@@ -147,7 +149,6 @@ window.addEventListener('load', () => {
 		slider_scale.value = scale;
 		slider_level.value = maxLevel;
 		slider_branches.value = branches;
-		// slider_hue.value = color;
 
 		label_sides.innerText = 'Sides: ' + Number(sides);
 		label_scale.innerText = 'Scale: ' + Number(scale).toFixed(2);
@@ -183,15 +184,10 @@ window.addEventListener('load', () => {
 		controls.classList.toggle('active');
 		closeMenuButton.classList.add('change');
 		openMenuButton.classList.add('change');
-
-		// closeMenuButton.classList.add('change');
-		// openMenuButton.classList.remove('change');
 	});
+
 	openMenuButton.addEventListener('click', () => {
 		controls.classList.toggle('active');
-
-		// openMenuButton.classList.toggle('change');
-
 		openMenuButton.classList.remove('change');
 		closeMenuButton.classList.remove('change');
 	});
@@ -232,7 +228,7 @@ window.addEventListener('load', () => {
 	});
 
 	slider_hue.addEventListener('change', (event) => {
-		// Update hue text (color contains9 entire HSL)
+		// Update hue text (color contains entire HSL)
 		label_hue.innerText = 'Color Hue: ' + event.target.value;
 
 		color = `hsl(${event.target.value}, 100%, 50%)`;
@@ -257,12 +253,6 @@ window.addEventListener('load', () => {
 		ctx.imageSmoothingEnabled = false;
 		drawFractal();
 	});
-
-	// slider_sides.addEventListener('change', (event) => {
-	//     sides = event.target.value;
-	//     updateSliders();
-	//     drawFractal();
-	// });
 
 	// Trying to not repeat event listeners
 	// let slidersArray = Array.from(sliders);
