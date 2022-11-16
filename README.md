@@ -5,3 +5,5 @@ Controls currently for:
    distance between branches
 
    randomize fractal shape with available controls
+   
+   view at https://eg744.github.io/FractalCanvas/
