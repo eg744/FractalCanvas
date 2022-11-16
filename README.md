@@ -19,6 +19,8 @@ Randomize fractal shape with values:
   
   
  Button to save fractal as .PNG
+ 
+This was a fun exercise to learn about drawing on the HTML canvas, making basic geometric shapes into more layered and beautiful complex shapes. I'm interested in learning more about fractals and creating fascinating patterns. I'm fascinated by the intersection of math, tech, art and there's so much more to learn.
 
       
    
