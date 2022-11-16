@@ -7,7 +7,7 @@ Controls currently for:
   scale of each branch drawn,
   distance between branches,
   number of parent branches,
-  color (hue)
+  color (hue).
 
 Randomize fractal shape with values: 
   Number of sides the shape has,
@@ -15,7 +15,7 @@ Randomize fractal shape with values:
   maximum depth of fractal,
   spread value from each branch,
   color (hue),
-  line width of drawn shape,
+  line width of drawn shape.
   
   
  Button to save fractal as .PNG
