@@ -2,8 +2,6 @@
 * {
 	margin: 0;
 	padding: 0;
-	/* border box causing overflow on firefox? */
-	/* box-sizing: border-box; */
 	transition: all 0.3s;
 }
 
@@ -12,7 +10,6 @@
 
 	position: absolute;
 
-	/* Center canvas on page */
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -26,7 +23,6 @@ button {
 	user-select: none;
 }
 button:hover {
-	/* scale: 1.1; */
 	box-shadow: 5px 5px 5px rgb(19, 31, 139);
 }
 #close,
