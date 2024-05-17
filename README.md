@@ -1,4 +1,4 @@
-HTML Canvas to draw fractal shapes. 
+Using HTML5 Canvas API to draw fractal shapes generated with JavaScript.
 
 Controls currently for: 
   Resetting shape,
